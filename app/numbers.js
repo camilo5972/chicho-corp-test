@@ -15,6 +15,7 @@ exports.numbersAnswers = {
   },
 
   multiply: function(a, b) {
-
+    const totalDecimals = b.toString().includes('.') ? b.toString().split('.')[1].length : 0;
+    return Number((a * b).toFixed(totalDecimals))
   }
 };
