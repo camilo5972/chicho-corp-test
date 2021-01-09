@@ -9,7 +9,7 @@ browserSync.init({
     baseDir: __dirname,
     index: 'tests/runner.html'
   },
-  files: ['app/**/*.js'],
+  files: ['app/**/*.ts'],
   host: host,
   port: port,
   open: false,
@@ -19,6 +19,6 @@ browserSync.init({
   logLevel: 'silent'
 });
 
-f = fs.readFileSync(__dirname + '/help.txt', 'utf8');
+const f = fs.readFileSync(__dirname + '/help.txt', 'utf8');
 console.log(f.replace('{{host}}', host).replace('{{port}}', port));
 console.log('Server running http://%s:%d', host, port);
